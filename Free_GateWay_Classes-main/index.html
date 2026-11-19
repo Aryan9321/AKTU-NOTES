@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AKTU Notes | Aryan Singh</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+
+:root {
+    --gold: #e9bd62;
+    --gold2: #ffdf91;
+    --bg: #080a10;
+    --card: #121722;
+    --muted: #9ba3b5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: white;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+    radial-gradient(circle at 10% 10%, #b8873020, transparent 30%),
+    radial-gradient(circle at 90% 70%, #6b4b9b18, transparent 30%);
+    z-index: -1;
+}
+
+header {
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffffff12;
+    background: #080a10dc;
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.logo span { color: white; }
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #c5c8d0;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover { color: var(--gold); }
+
+.hero {
+    text-align: center;
+    padding: 95px 20px 75px;
+    position: relative;
+}
+
+.crown {
+    font-size: 48px;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% { transform: translateY(-10px); }
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #e9bd6260;
+    border-radius: 30px;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 6vw, 68px);
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+    text-shadow: 0 0 30px #e9bd6240;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #f7d68a, #bd8735);
+    color: #15100a;
+    padding: 13px 27px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px #e9bd6240;
+}
+
+.section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 35px 22px 75px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-title h2 span { color: var(--gold); }
+
+.section-title p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.search-box {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 17px 22px;
+    background: #151b27;
+    border: 1px solid #ffffff20;
+    border-radius: 12px;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: .3s;
+}
+
+.search-box input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 20px #e9bd6220;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: linear-gradient(145deg, #171e2c, #10141d);
+    border: 1px solid #ffffff12;
+    border-radius: 16px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #e9bd6210;
+    border-radius: 50%;
+    right: -35px;
+    top: -35px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #e9bd6270;
+    box-shadow: 0 15px 40px #0008;
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.card a {
+    display: inline-block;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.card a:hover { color: white; }
+
+.no-result {
+    display: none;
+    text-align: center;
+    color: var(--muted);
+    padding: 30px;
+}
+
+.owner {
+    text-align: center;
+    margin: 20px 20px 70px;
+    padding: 35px 20px;
+    background: linear-gradient(135deg, #181c26, #11141c);
+    border: 1px solid #e9bd6240;
+    border-radius: 18px;
+}
+
+.owner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.owner p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+footer {
+    border-top: 1px solid #ffffff15;
+    text-align: center;
+    padding: 25px 15px;
+    color: #858b9a;
+    font-size: 13px;
+}
+
+footer span { color: var(--gold); }
+
+@media(max-width: 800px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    nav { gap: 12px; }
+}
+
+@media(max-width: 550px) {
+    header { padding: 17px 5%; }
+    .logo { font-size: 18px; }
+    nav a { font-size: 12px; }
+    .grid { grid-template-columns: 1fr; }
+    .hero { padding-top: 70px; }
+    .section-title h2 { font-size: 27px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">AKTU<span> NOTES</span></div>
+    <nav>
+        <a href="#home">Home</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="crown">👑</div>
+    <div class="tag">THE ULTIMATE STUDY DESTINATION</div>
+
+    <h1>ARYAN SINGH<br>
+    <span>KING OF ALL AKTU NOTES</span></h1>
+
+    <p>
+        Welcome to your ultimate AKTU study destination.
+        Explore semester-wise notes, important questions,
+        previous year papers and study materials.
+    </p>
+
+    <a href="aryan.html" class="hero-btn">EXPLORE NOTES →</a>
+</section>
+
+<section class="owner" id="about">
+    <h2>👑 ARYAN SINGH</h2>
+    <p>
+        KING OF ALL AKTU NOTES<br>
+        Your Knowledge. Your Success. Your Future.<br>
+        One Platform. Unlimited Learning.
+    </p>
+</section>
+
+<footer>
+    © 2026 <span>ARYAN SINGH</span> | KING OF ALL AKTU NOTES
+    <br><br>
+    Designed with ❤️ for AKTU Students
+</footer>
+
+<script>
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+const noResult = document.getElementById("noResult");
+
+search.addEventListener("input", function() {
+
+    const value = this.value.toLowerCase();
+    let visible = 0;
+
+    cards.forEach(card => {
+        const match = card.innerText.toLowerCase().includes(value);
+
+        card.style.display = match ? "block" : "none";
+
+        if(match) visible++;
+    });
+
+    noResult.style.display = visible === 0 ? "block" : "none";
+});
+
+// Smooth reveal animation
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, { threshold: 0.1 });
+
+cards.forEach(card => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(25px)";
+    card.style.transition = "opacity .6s, transform .6s, border .3s";
+    observer.observe(card);
+});
+</script>
+
+</body>
+</html>
