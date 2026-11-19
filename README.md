@@ -92,6 +92,5 @@ aktu-notes-store/
 
 ## 👨‍💻 Creator & Maintainer
 
-- **Developer / Maintainer**: **Shivansh**
-- **Instagram**: [@Shiva._SWE](https://instagram.com/Shiva._SWE)
-- **GitHub**: [@ShivanshSWE-cmd](https://github.com/ShivanshSWE-cmd)
+- **Developer / Maintainer**: **ARYAN**
+- **Instagram**: [@_aryansgh](https://instagram.com/_aryansgh)
